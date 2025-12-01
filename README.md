@@ -1,4 +1,3 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/vwr69Qqh)
 # AUT03_02_Diccionario
 
 Realizar las acciones descritas en el siguiente [documento](https://docs.google.com/document/d/19s1rjyGfGI4YHdoz5jz5p3-EvrsEihE1pyiAe3zLMBc/edit?usp=sharing) para cumplir con todos los requisitos detallados en el mismo.
