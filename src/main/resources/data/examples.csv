@@ -1,0 +1,50 @@
+algoritmo;Ese algoritmo tarda menos desde la última actualización.;That algorithm runs faster since the last update.
+compilador;El compilador me marcó un error en la línea 8.;The compiler flagged an error on line 8.
+intérprete;El intérprete tarda más, pero es útil para probar rápido.;The interpreter is slower but handy for quick tests.
+depuración;Activé la depuración y encontré el bucle infinito.;I enabled debugging and found the infinite loop.
+registro;Revisa el registro antes de abrir un ticket.;Check the logging before opening a ticket.
+trazas;Las trazas muestran qué método falla al inicio.;The traces show which method fails at startup.
+fallo;El fallo solo ocurre en producción, no en local.;The failure only happens in production, not locally.
+excepción;Captura la excepción y vuelve a intentarlo.;Catch the exception and try again.
+controlador;El controlador redirige al usuario tras el login.;The controller redirects the user after login.
+servicio;El servicio se reinició y ya responde bien.;The service restarted and now responds fine.
+repositorio;El repositorio guarda las consultas más usadas.;The repository stores the most used queries.
+entidad;La entidad Usuario ahora tiene fecha de alta.;The User entity now includes a join date.
+interfaz;Implementa la interfaz y añade los tests.;Implement the interface and add the tests.
+implementación;La implementación nueva reduce el consumo de memoria.;The new implementation reduces memory usage.
+biblioteca;Añadí la biblioteca para crear PDF fácilmente.;I added the library to create PDFs easily.
+framework;Con ese framework montamos la API en un día.;With that framework we built the API in a day.
+paquete;El paquete trae tipados y utilidades.;The package ships typings and utilities.
+módulo;El módulo de pagos falló tras el cambio de clave.;The payments module failed after the key change.
+dependencia;Actualiza la dependencia a una versión estable.;Update the dependency to a stable version.
+gestor de paquetes;Con el gestor de paquetes fijé las versiones.;With the package manager I pinned the versions.
+semántica;Cambia el nombre para mejorar la semántica del código.;Rename it to improve the code semantics.
+sintaxis;Olvidaste un punto y coma en la sintaxis.;You missed a semicolon in the syntax.
+compilación;La compilación tarda menos en caché caliente.;Compilation is faster with a warm cache.
+despliegue;El despliegue salió a las 22:00 sin cortes.;The deployment went out at 10 pm with no downtime.
+integración continua;La integración continua rompió por un test flaco.;Continuous integration broke due to a flaky test.
+entrega continua;La entrega continua publica microversiones a diario.;Continuous delivery pushes micro releases daily.
+canalización;La canalización valida y luego publica.;The pipeline validates and then publishes.
+control de versiones;Sin control de versiones es fácil perder cambios.;Without version control it's easy to lose changes.
+rama;Crea una rama y abre el pull request.;Create a branch and open the pull request.
+etiqueta;Pusimos la etiqueta v1.0 tras los tests.;We added tag v1.0 after the tests.
+compilador;El compilador avisó de una variable sin usar.;The compiler warned about an unused variable.
+excepción;Esa excepción solo salta con datos vacíos.;That exception only fires with empty data.
+despliegue;El despliegue azul-verde evitó el corte.;The blue‑green deployment prevented downtime.
+algoritmo;El algoritmo nuevo ordena por relevancia.;The new algorithm sorts by relevance.
+módulo;Dividimos el módulo para mejorar el tamaño del bundle.;We split the module to improve bundle size.
+repositorio;El repositorio ahora usa consultas paginadas.;The repository now uses paginated queries.
+servicio;El servicio cachea respuestas de diez minutos.;The service caches responses for ten minutes.
+controlador;El controlador valida el token antes de seguir.;The controller validates the token before proceeding.
+biblioteca;Cambiamos de biblioteca por la licencia.;We switched library due to the license.
+framework;Ese framework tiene una curva suave de aprendizaje.;That framework has a gentle learning curve.
+paquete;El paquete se publicó con un README claro.;The package was published with a clear README.
+gestor de paquetes;El gestor de paquetes resolvió los conflictos.;The package manager resolved the conflicts.
+canalización;Añadí un paso de seguridad a la canalización.;I added a security step to the pipeline.
+control de versiones;Usa control de versiones para revisar el historial.;Use version control to review the history.
+rama;Borra la rama tras hacer el merge.;Delete the branch after merging.
+etiqueta;Busca la etiqueta con la fecha del lanzamiento.;Find the tag with the release date.
+dependencia;Quitamos una dependencia que ya no hacía falta.;We removed a dependency that was no longer needed.
+compilación;La compilación falla por un import circular.;Compilation fails due to a circular import.
+depuración;Hice depuración remota desde el portátil.;I did remote debugging from the laptop.
+trazas;Sube el nivel de trazas para ver más detalle.;Increase trace level to see more detail.

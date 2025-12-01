@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Terminos - Diccionario</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <header th:replace="~{fragments/header :: header}"></header>
+        <div class="container mt-4">
+            <div class="mb-3">
+                <h3>TÉRMINOS</h3>
+            </div>
+            <div sec:authorize="hasAnyRole('BASIC', 'PREMIUM')">
+                <div class="card mb-2" th:each="term : ${terms}">
+                    <div class="card-body">
+                        <p class="card-text">Español: <span th:text="${term.esp}"></span></p>
+                        <p class="card-text">Inglés: <span th:text="${term.eng}"></span></p>
+
+                        <button sec:authorize="hasRole('BASIC') and !hasRole('PREMIUM')" class="btn btn-success" disabled>
+                            Frases de Ejemplo <span th:text="${term.exampleCount}"></span>
+                        </button>
+
+                        <a sec:authorize="hasRole('PREMIUM')" th:href="@{'/terms/' + ${term.id}}" class="btn btn-success">
+                            Frases de Ejemplo <span th:text="${term.exampleCount}"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div sec:authorize="hasRole('ADMIN')">
+                <table class="table table-striped table-hover align-middle">
+                    <thead class="bg-white border-bottom text-center">
+                        <tr>
+                            <th>Español</th>
+                            <th>Inglés</th>
+                            <th>Frases de Ejemplo</th>
+                            <th class="text-end">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="term : ${terms}">
+                            <td th:text="${term.esp}"></td>
+                            <td th:text="${term.eng}"></td>
+                            <td th:text="${term.exampleCount}"></td>
+                            <td class="text-end p-3">
+                                <a th:href="@{'/terms/' + ${term.id}}" class="btn btn-outline-success me-2">Detalles</a>
+                                <a th:href="@{'/terms/edit/' + ${term.id}}" class="btn btn-outline-warning me-2">Editar</a>
+                                <a th:href="@{'/terms/delete/' + ${term.id}}" class="btn btn-outline-danger">Borrar</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Terminos - Diccionario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<header th:replace="~{fragments/header :: header}"></header>
+<div class="container mt-4 pb-5">
+    <h3 class="mb-4">Detalles</h3>
+    <p class="mb-3">
+        <strong>Español:</strong>
+        <span th:text="${term.esp}"></span>
+    </p>
+    <p class="mb-3">
+        <strong>Inglés:</strong>
+        <span th:text="${term.eng}"></span>
+    </p>
+    <h3 class="mb-5">Frases de Ejemplo</h3>
+    <div class="card mb-2 position-relative" th:each="example : ${examples}">
+        <div class="card-body">
+            <div class="position-absolute top-0 end-0 me-2 mt-2 text-muted d-flex flex-column align-items-end gap-1">
+                <!-- Autor -->
+                <span th:text="${example.author != null ? 'By ' + example.author : 'By Anonymous'}"></span>
+
+                <!-- Botón borrar solo si coincide el autor -->
+                <form th:if="${example.author == #authentication.name}" sec:authorize="!hasRole('ADMIN')"
+                      th:action="@{'/examples/delete/' + ${example.id}}"
+                      method="post" class="m-0">
+                    <button type="submit" class="btn btn-sm btn-danger">Borrar</button>
+                </form>
+            </div>
+            <div class="position-absolute bottom-0 end-0 me-2 mb-1 text-muted d-flex flex-row align-items-end gap-1" sec:authorize="hasRole('ADMIN')">
+                <!-- ADMIN BORRAR-->
+                <form
+                      th:action="@{'/examples/delete/' + ${example.id}}"
+                      method="post" class="m-0">
+                    <button type="submit" class="btn btn-sm btn-danger">Borrar</button>
+                </form>
+
+                <!-- ADMIN EDITAR -->
+                <a
+                   th:href="@{'/examples/edit/' + ${example.id}}"
+                   class="btn btn-sm btn-warning">Editar</a>
+            </div>
+
+            <p class="card-text">
+                <strong>Español:</strong>
+                <span th:text="${example.exEsp}"></span>
+            </p>
+            <p class="card-text">
+                <strong>Inglés:</strong>
+                <span th:text="${example.exEng}"></span>
+            </p>
+        </div>
+    </div>
+    <a class="btn btn-primary" th:href="@{'/examples/create?term=' + ${term.id}}" sec:authorize="hasAnyRole('PREMIUM','ADMIN')">Añadir Ejemplo</a>
+    <a class="btn btn-secondary" th:href="@{/terms}">Volver</a>
+</div>
+</body>
+</html>

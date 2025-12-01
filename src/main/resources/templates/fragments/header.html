@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+    <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <body>
+        <header class="bg-primary">
+            <div class="container-xxl text-light p-2 d-flex justify-content-between">
+                <div class="d-flex flex-row align-items-center gap-4">
+                    <h1> <a th:href="@{/}" class="text-light link-offset-2 link-underline link-underline-opacity-0">Diccionario</a></h1>
+                    <div sec:authorize="isAuthenticated()" class="d-flex flex-row gap-3">
+                        <a th:href="@{/terms}" class="text-light link-underline link-underline-opacity-0">Términos</a>
+                        <a sec:authorize="!hasAnyRole('PREMIUM', 'ADMIN')" th:href="@{/premium}" class="text-light link-underline link-underline-opacity-0">Premium</a>
+                        <a sec:authorize="!hasAnyRole('PREMIUM', 'BASIC')" th:href="@{/users}" class="text-light link-underline link-underline-opacity-0">Usuarios</a>
+
+                    </div>
+                </div>
+                <div>
+                    <a sec:authorize="!isAuthenticated()" th:href="@{/register}" class="btn btn-secondary">Registro</a>
+                    <a sec:authorize="!isAuthenticated()" th:href="@{/login}" class="btn btn-outline-light">Entrar</a>
+
+                    <div sec:authorize="isAuthenticated()" class="d-flex flex-row align-items-center">
+                        <div class="me-2">Usuario: <span sec:authentication="name"></span></div>
+                        <form sec:authorize="isAuthenticated()" th:action="@{/logout}" method="post">
+                            <button type="submit" class="btn btn-outline-light fw-semibold">Salir</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </body>
+</html>
